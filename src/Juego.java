@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Juego {
 	
@@ -6,8 +7,7 @@ public class Juego {
 
 	public static void main(String[] args) {
 		
-		menuPrincipal();
-		
+		menuPrincipal();		
 	}
 	
 	public static void menuPrincipal() {
@@ -25,7 +25,7 @@ public class Juego {
 		
 		switch(opcion) {
 			case "1":
-				
+			Tablero tablero = new Tablero();	
 				break;
 			case "2":
 				

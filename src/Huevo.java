@@ -1,4 +1,3 @@
-
 public class Huevo {
 	
 	private int fila;

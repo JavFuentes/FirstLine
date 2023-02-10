@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GameManager {
+public class Juego {
 	
 	public static Scanner sc = new Scanner(System.in);
 
@@ -21,9 +21,7 @@ public class GameManager {
 			System.out.println("------------------");
 			
 			opcion = sc.nextLine();
-		}
-		
-		
+		}		
 		
 		switch(opcion) {
 			case "1":

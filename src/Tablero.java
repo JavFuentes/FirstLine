@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Tablero {
 	private Carro carros[];
@@ -17,12 +18,9 @@ public class Tablero {
 	private int puntaje;
 	
 		
-	public Tablero(Carro[] carros, ArrayList<Huevo> huevos, char[] filas, char[] columnas, int puntaje) {
+	public Tablero(Carro[] carros, ArrayList<Huevo> huevos) {
 		this.carros = carros;
-		this.huevos = huevos;
-		this.filas = filas;
-		this.columnas = columnas;
-		this.puntaje = puntaje;
+		this.huevos = huevos;		
 	}
 	
 	public Tablero() {
@@ -33,7 +31,7 @@ public class Tablero {
 		
 		for(char fila : filas) {
 			for(char casilla : columnas) {
-				System.out.println();
+				System.out.print(CALLE);
 			} System.out.println();
 		}
 	}
@@ -109,6 +107,12 @@ public class Tablero {
 	public char getKROMI() {
 		return KROMI;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Tablero [carros=" + Arrays.toString(carros) + ", huevos=" + huevos + ", SIZE=" + SIZE + ", filas="
+				+ Arrays.toString(filas) + ", columnas=" + Arrays.toString(columnas) + ", CALLE=" + CALLE + ", HUEVO="
+				+ HUEVO + ", TRUPALLA=" + TRUPALLA + ", CAGUANO=" + CAGUANO + ", KROMI=" + KROMI + ", puntaje="
+				+ puntaje + "]";
+	}	
 }

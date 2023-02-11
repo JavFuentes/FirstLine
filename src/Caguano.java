@@ -31,6 +31,11 @@ public class Caguano extends Carro {
 	public void setColorConfeti(String colorConfeti) {
 		this.colorConfeti = colorConfeti;
 	}
+
+	@Override
+	public String toString() {
+		return "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + "]";
+	}
 	
 	
 }

@@ -30,5 +30,10 @@ public class Kromi extends Carro {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	@Override
+	public String toString() {
+		return "Kromi [anno=" + anno + ", marca=" + marca + "]";
 	}		
 }

@@ -48,7 +48,13 @@ public class Carro {
 
 	public void setUbicacionColumna(int ubicacionColumna) {
 		this.ubicacionColumna = ubicacionColumna;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", ubicacionFila="
+				+ ubicacionFila + ", ubicacionColumna=" + ubicacionColumna + "]";
+	}		
 }
 
 

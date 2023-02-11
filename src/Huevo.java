@@ -37,5 +37,12 @@ public class Huevo {
 
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
-	}			
+	}
+
+	@Override
+	public String toString() {
+		return "Huevo [fila=" + fila + ", columna=" + columna + ", puntaje=" + puntaje + "]";
+	}	
+	
+	
 }

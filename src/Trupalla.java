@@ -19,15 +19,21 @@ public class Trupalla extends Carro {
 	public int getNivelArmadura() {
 		return nivelArmadura;
 	}
+	
 	public void setNivelArmadura(int nivelArmadura) {
 		this.nivelArmadura = nivelArmadura;
 	}
+	
 	public String getConductor() {
 		return conductor;
 	}
+	
 	public void setConductor(String conductor) {
 		this.conductor = conductor;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Trupalla [nivelArmadura=" + nivelArmadura + ", conductor=" + conductor + "]";
+	}	
 }

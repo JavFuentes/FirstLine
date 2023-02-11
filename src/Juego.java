@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.time.LocalDate;
 
@@ -25,11 +27,25 @@ public class Juego {
 		
 		switch(opcion) {
 			case "1":
-			Tablero tablero = new Tablero();	
+				instanciarTodo();
 				break;
 			case "2":
 				
 				break;
 		}
+	}
+	
+	public static void instanciarTodo() {
+						
+		Kromi kromi[] = new Kromi[3];
+				
+		Caguano caguanos[] = new Caguano[5];
+								
+		Trupalla trupallas[] = new Trupalla[10];
+		
+		
+		
+		Tablero tablero = new Tablero(new Carro[]{kromi[0], kromi[1], kromi[2]}, 
+				new ArrayList<Huevo>(Arrays.asList()));
 	}
 }

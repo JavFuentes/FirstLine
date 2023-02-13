@@ -4,12 +4,11 @@ import java.util.Arrays;
 public class Tablero {
 	private Carro carros[];
 	private ArrayList<Huevo> huevos;
+			
+	private final int SIZE = 15;
+	private char[][] casilla = new char[SIZE][SIZE];
 		
-	private final int SIZE = 15;	
-	private char[] filas = new char[SIZE];
-	private char[] columnas = new char[SIZE];
-	
-	private final char CALLE = '-';
+	private final char CALLE = '*';
 	private final char HUEVO = 'H';
 	private final char TRUPALLA = 'T';
 	private final char CAGUANO = 'C';
@@ -29,21 +28,30 @@ public class Tablero {
 
 	public void crearTableroInicial() {
 		
-		for(char fila : filas) {
-			for(char casilla : columnas) {
-				System.out.print(CALLE);
-			} System.out.println();
+		for(int i = 0; i < SIZE; i++) {
+			for(int j = 0; j < SIZE; j++) {
+				casilla[i][j] = CALLE;				
+			}
 		}
 	}
 	
 	public void mostrarTablero() {
+		for(int i = 0; i < SIZE; i++) {
+			for(int j = 0; j < SIZE; j++) {								
+				System.out.print(" " + casilla[j][i] + " ");
+			} System.out.println();
+		}
+		System.out.println();
+	}
+
+	public void posicionarCarros() {
 		
 	}
 	
 	public void mostrarPuntaje() {
 		
 	}
-
+	
 	public Carro[] getCarros() {
 		return carros;
 	}
@@ -59,21 +67,9 @@ public class Tablero {
 	public void setHuevos(ArrayList<Huevo> huevos) {
 		this.huevos = huevos;
 	}
-
-	public char[] getFilas() {
-		return filas;
-	}
-
-	public void setFilas(char[] filas) {
-		this.filas = filas;
-	}
-
-	public char[] getColumnas() {
-		return columnas;
-	}
-
-	public void setColumnas(char[] columnas) {
-		this.columnas = columnas;
+			
+	public int getSIZE() {
+		return SIZE;
 	}
 
 	public int getPuntaje() {
@@ -82,10 +78,6 @@ public class Tablero {
 
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
-	}
-
-	public int getSIZE() {
-		return SIZE;
 	}
 
 	public char getCALLE() {
@@ -107,12 +99,15 @@ public class Tablero {
 	public char getKROMI() {
 		return KROMI;
 	}
+	
+	public void setCasilla(int columna, int fila, char valor) {		
+	    this.casilla[columna][fila] = valor;	}
 
-	@Override
-	public String toString() {
-		return "Tablero [carros=" + Arrays.toString(carros) + ", huevos=" + huevos + ", SIZE=" + SIZE + ", filas="
-				+ Arrays.toString(filas) + ", columnas=" + Arrays.toString(columnas) + ", CALLE=" + CALLE + ", HUEVO="
-				+ HUEVO + ", TRUPALLA=" + TRUPALLA + ", CAGUANO=" + CAGUANO + ", KROMI=" + KROMI + ", puntaje="
-				+ puntaje + "]";
+	public char[][] getCasilla() {
+		return casilla;
 	}	
 }
+	
+	
+		
+

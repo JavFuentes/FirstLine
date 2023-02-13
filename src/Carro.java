@@ -7,6 +7,8 @@ public class Carro {
 	private int ubicacionFila;
 	private int ubicacionColumna;
 	
+	
+	
 	public Carro(int cantidadOcupantes, LocalDate fechaIngreso, int ubicacionFila, int ubicacionColumna) {
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;

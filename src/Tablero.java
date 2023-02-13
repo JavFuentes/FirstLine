@@ -43,13 +43,43 @@ public class Tablero {
 		}
 		System.out.println();
 	}
+	
+	public void mostrarTableroSinVision() {
+		for(int i = 0; i < SIZE; i++) {
+			for(int j = 0; j < SIZE; j++) {	
+				if(casilla[j][i] == HUEVO) {
+					System.out.print(" " + HUEVO + " ");
+				} else {
+					System.out.print(" " + CALLE + " ");
+				}				
+			} System.out.println();
+		}
+		System.out.println();
+	}
 
 	public void posicionarCarros() {
 		
 	}
 	
-	public void mostrarPuntaje() {
+	public int mostrarPuntaje() {
+		int puntajeTotal = 0;
 		
+		for(Huevo huevo : huevos) {
+			puntajeTotal += huevo.getPuntaje();
+		}
+		return puntajeTotal;
+	}
+	
+	public int contarLanzamientos() {
+		int lanzamientos = 0;
+		for (Huevo huevo : huevos) {
+			   lanzamientos++;
+		}
+		return lanzamientos;
+	}
+	
+	public void agregarHuevo(Huevo huevo) {
+	      huevos.add(huevo);
 	}
 	
 	public Carro[] getCarros() {
@@ -100,8 +130,8 @@ public class Tablero {
 		return KROMI;
 	}
 	
-	public void setCasilla(int columna, int fila, char valor) {		
-	    this.casilla[columna][fila] = valor;	}
+	public void setCasilla(int fila, int columna, char valor) {		
+	    this.casilla[fila][columna] = valor;	}
 
 	public char[][] getCasilla() {
 		return casilla;

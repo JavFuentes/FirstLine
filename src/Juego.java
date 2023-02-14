@@ -232,12 +232,12 @@ public class Juego {
 		
 		/**
 		 * Se valida que se ingresen solo números para la variable fila
-		 */
-		fila = Integer.valueOf(sc.nextLine()) - 1;
+		 */		
+		fila = Integer.parseInt(sc.nextLine()) - 1;		
 		while(!String.valueOf(fila).matches("[0-9]{1,2}")) {
 			System.out.println("[Error]");
 			System.out.println("Fila: ");
-			fila = Integer.valueOf(sc.nextLine()) - 1;
+			fila = Integer.parseInt(sc.nextLine()) - 1;			
 		}
 		
 		System.out.println("Columna: ");

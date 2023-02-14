@@ -45,7 +45,5 @@ public class Caguano extends Carro {
 	@Override
 	public String toString() {
 		return "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + "]";
-	}
-	
-	
+	}	
 }

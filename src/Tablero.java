@@ -96,7 +96,7 @@ public class Tablero {
 			}
 			
 			for(int j = 0; j < SIZE; j++) {	
-				if(casilla[j][i] == HUEVO) {
+				if(casilla[i][j] == HUEVO) {
 					System.out.print("  " + HUEVO + "  ");
 				} else {
 					System.out.print("  " + CALLE + "  ");

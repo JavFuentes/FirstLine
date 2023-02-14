@@ -57,7 +57,5 @@ public class Huevo {
 	@Override
 	public String toString() {
 		return "Huevo [fila=" + fila + ", columna=" + columna + ", puntaje=" + puntaje + "]";
-	}	
-	
-	
+	}		
 }

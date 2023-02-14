@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 /**
  * @author JavFuentes
- *
  */
 
 public class Tablero {
 	
 	/**
-	 * Arreglo que contiene todos los carros que desplegarán las fuerzas del órden.
+	 * Arreglo que contiene los carros que desplegarán las fuerzas del órden.
 	 */
 	private Carro carros[];
 	
@@ -68,7 +67,7 @@ public class Tablero {
 	 */
 	public void mostrarTablero() {
 		for(int i = 0; i < SIZE; i++) {
-			for(int j = 0; j < SIZE; j++) {								
+			for(int j = 0; j < SIZE; j++) {					
 				System.out.print(" " + casilla[j][i] + " ");
 			} System.out.println();
 		}
@@ -79,22 +78,34 @@ public class Tablero {
 	 * Método que imprime el tablero, ocultando la ubicación de los carros enemigos.
 	 */
 	public void mostrarTableroSinVision() {
+		System.out.print("  ");
+		for(int k = 0; k < SIZE;k++) {
+			if(k < 10) {
+				System.out.print("  " + (k + 1) + "  ");
+			}else {
+				System.out.print(" " + (k + 1) + "  ");
+			}
+			
+		}System.out.println();
+		
 		for(int i = 0; i < SIZE; i++) {
+			if(i < 9) {
+				System.out.print((i + 1) + " ");	
+			} else {
+				System.out.print(i + 1);
+			}
+			
 			for(int j = 0; j < SIZE; j++) {	
 				if(casilla[j][i] == HUEVO) {
-					System.out.print(" " + HUEVO + " ");
+					System.out.print("  " + HUEVO + "  ");
 				} else {
-					System.out.print(" " + CALLE + " ");
+					System.out.print("  " + CALLE + "  ");
 				}				
-			} System.out.println();
+			} System.out.println(); 
 		}
 		System.out.println();
 	}
-
-	public void posicionarCarros() {
 		
-	}
-	
 	/**
 	 * Método que retorna la suma del puntaje obtenido con cada lanzamiento.
 	 */

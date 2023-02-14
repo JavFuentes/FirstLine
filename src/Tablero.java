@@ -1,22 +1,46 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+/**
+ * @author JavFuentes
+ *
+ */
 
 public class Tablero {
+	
+	/**
+	 * Arreglo que contiene todos los carros que desplegarán las fuerzas del órden.
+	 */
 	private Carro carros[];
+	
+	/**
+	 * ArrayList que contiene los huevos lanzados.
+	 */
 	private ArrayList<Huevo> huevos;
-			
+	
+	/**
+	 * Se establece una matriz de 15 x 15 que representa el tablero de juego.
+	 */		
 	private final int SIZE = 15;
 	private char[][] casilla = new char[SIZE][SIZE];
 		
+	/**
+	 * Se establecen los símbolos que representarán los distintos estados que puede 
+	 * tener una casilla del tablero.
+	 */	
 	private final char CALLE = '*';
 	private final char HUEVO = 'H';
 	private final char TRUPALLA = 'T';
 	private final char CAGUANO = 'C';
 	private final char KROMI = 'K';
 	
+	/**
+	 * Atributo que guarda el puntaje obtenido por el jugador en cada partida.
+	 */	
 	private int puntaje;
 	
-		
+	/**
+	 * Constructor con parámetros.
+	 */	
 	public Tablero(Carro[] carros, ArrayList<Huevo> huevos) {
 		this.carros = carros;
 		this.huevos = huevos;		
@@ -25,7 +49,10 @@ public class Tablero {
 	public Tablero() {
 		
 	}
-
+	
+	/**
+	 * Se crea la matriz inicial, que representa las calles vacías, justo antes del despliegue de PKS.
+	 */	
 	public void crearTableroInicial() {
 		
 		for(int i = 0; i < SIZE; i++) {
@@ -35,6 +62,10 @@ public class Tablero {
 		}
 	}
 	
+	/**
+	 * Método que imprime el tablero, reservado unicamente para testeo, ya que el jugador no debe acceder
+	 * a la información sobre la ubicación exacta del enemigo.
+	 */
 	public void mostrarTablero() {
 		for(int i = 0; i < SIZE; i++) {
 			for(int j = 0; j < SIZE; j++) {								
@@ -44,6 +75,9 @@ public class Tablero {
 		System.out.println();
 	}
 	
+	/**
+	 * Método que imprime el tablero, ocultando la ubicación de los carros enemigos.
+	 */
 	public void mostrarTableroSinVision() {
 		for(int i = 0; i < SIZE; i++) {
 			for(int j = 0; j < SIZE; j++) {	
@@ -61,15 +95,20 @@ public class Tablero {
 		
 	}
 	
+	/**
+	 * Método que retorna la suma del puntaje obtenido con cada lanzamiento.
+	 */
 	public int mostrarPuntaje() {
-		int puntajeTotal = 0;
-		
+		puntaje = 0;		
 		for(Huevo huevo : huevos) {
-			puntajeTotal += huevo.getPuntaje();
+			puntaje += huevo.getPuntaje();
 		}
-		return puntajeTotal;
+		return puntaje;
 	}
 	
+	/**
+	 * Método que retorna la cantidad de huevos lanzados.
+	 */
 	public int contarLanzamientos() {
 		int lanzamientos = 0;
 		for (Huevo huevo : huevos) {
@@ -78,6 +117,9 @@ public class Tablero {
 		return lanzamientos;
 	}
 	
+	/**
+	 * Método que añade un huevo a la lista de huevos lanzados.
+	 */
 	public void agregarHuevo(Huevo huevo) {
 	      huevos.add(huevo);
 	}
@@ -130,9 +172,15 @@ public class Tablero {
 		return KROMI;
 	}
 	
+	/**
+	 * Método que permite cambiar el estado de una casilla del tablero.
+	 */
 	public void setCasilla(int fila, int columna, char valor) {		
 	    this.casilla[fila][columna] = valor;	}
 
+	/**
+	 * Método que permite obtener el estado de una casilla del tablero.
+	 */
 	public char[][] getCasilla() {
 		return casilla;
 	}	

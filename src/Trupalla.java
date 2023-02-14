@@ -1,10 +1,20 @@
 import java.time.LocalDate;
+/**
+ * @author JavFuentes
+ *
+ */
 
 public class Trupalla extends Carro {
-
+	
+	/*
+	 * Atributos irrelevantes para el juego.
+	 */
 	private int nivelArmadura;
 	private String conductor;
 	
+	/*
+	 * Contructor con parámetros.
+	 */
 	public Trupalla(int cantidadOcupantes, LocalDate fechaIngreso, int ubicacionFila, int ubicacionColumna,
 			int nivelArmadura, String conductor) {
 		super(cantidadOcupantes, fechaIngreso, ubicacionFila, ubicacionColumna);

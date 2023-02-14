@@ -5,21 +5,36 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.time.LocalDate;
+/**
+ * @author JavFuentes
+ *
+ */
 
 public class Juego {
+	
+	/**
+	 * Variables que en conjunto apuntan a una ubicación en el tablero.
+	 */
 	public static int coordenadaX;
 	public static int coordenadaY;
 
+	/**
+	 * Se instancian los carros enemigos.
+	 */
 	static Kromi kromis[] = new Kromi[3];
-
 	static Caguano caguanos[] = new Caguano[5];
-
 	static Trupalla trupallas[] = new Trupalla[10];
 
+	/**
+	 * Se instancia un tablero.
+	 */
 	static Tablero tablero = new Tablero(new Carro[] { kromis[0], kromis[1], kromis[2], caguanos[0], caguanos[1],
 			caguanos[2], caguanos[3], caguanos[4], trupallas[0], trupallas[1], trupallas[2], trupallas[3], trupallas[4],
 			trupallas[5], trupallas[6], trupallas[7], trupallas[8], trupallas[9] }, new ArrayList<Huevo>());
-
+	
+	/**
+	 *  Se instancian las clases Random y Scanner
+	 */
 	public static Random random = new Random();
 	public static Scanner sc = new Scanner(System.in);
 
@@ -52,7 +67,10 @@ public class Juego {
 			break;
 		}
 	}
-
+	
+	/**
+	 * Procedimiento que crea un nuevo tablero y dispone los carros enemigos.
+	 */
 	public static void crearPartida() {
 
 		tablero.crearTableroInicial();
@@ -61,7 +79,11 @@ public class Juego {
 		despliegueCaguanos();
 		despliegueTrupallas();
 	}
-
+	
+	/**
+	 * Procedimiento que muestra el tablero y pide las coordenadas para un nuevo lanzamiento, 
+	 * de forma iterativa.
+	 */
 	public static void comenzarPartida() {
 		while (true) {
 			tablero.mostrarTableroSinVision();
@@ -71,11 +93,17 @@ public class Juego {
 		}
 	}
 
+	/**
+	 * Procedimiento que genera una ubicación aleatoria en el tablero.
+	 */
 	public static void generarCoordenadasAleatorias() {
 		coordenadaX = random.nextInt(13);
 		coordenadaY = random.nextInt(12);
 	}
-
+	
+	/**
+	 * Procedimiento que ubica las Kromis en el tablero.
+	 */
 	public static void despliegueKromis() {
 
 		boolean posicionado = false;
@@ -102,6 +130,9 @@ public class Juego {
 		}
 	}
 
+	/**
+	 * Procedimiento que ubica los Caguanos en el tablero.
+	 */
 	public static void despliegueCaguanos() {
 
 		boolean posicionado = false;
@@ -126,6 +157,9 @@ public class Juego {
 		}
 	}
 
+	/**
+	 * Procedimiento que ubica las trupallas en el tablero.
+	 */
 	public static void despliegueTrupallas() {
 
 		boolean posicionado = false;
@@ -148,12 +182,16 @@ public class Juego {
 		}
 	}
 
+	/**
+	 * Procedimiento que lanza un huevo en las coordenadas que el usuario elige.
+	 */
 	public static void nuevoLanzamiento() {
 
 		int fila = 0;
 		int columna = 0;
 		int puntaje = 0;
 
+		
 		System.out.println("Seleccione fila y columna donde lanzará el huevo. ");
 		System.out.println("Si desea terminar la partida escriba cero. ");
 		System.out.println("Fila: ");

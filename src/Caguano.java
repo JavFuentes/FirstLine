@@ -1,10 +1,20 @@
 import java.time.LocalDate;
+/**
+ * @author JavFuentes
+ *
+ */
 
 public class Caguano extends Carro {
 
+	/*
+	 * Atributos irrelevantes para el juego.
+	 */
 	private int alcanceTiro;
 	private String colorConfeti;
 	
+	/*
+	 * Contructor con parámetros.
+	 */
 	public Caguano(int cantidadOcupantes, LocalDate fechaIngreso, int ubicacionFila, int ubicacionColumna,
 			int alcanceTiro, String colorConfeti) {
 		super(cantidadOcupantes, fechaIngreso, ubicacionFila, ubicacionColumna);

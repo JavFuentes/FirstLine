@@ -1,9 +1,24 @@
+/**
+ * @author JavFuentes
+ *
+ */
+
 public class Huevo {
 	
+	/*
+	 * Atributos que indican las coordenadas donde fue lanzado el huevo.
+	 */
 	private int fila;
 	private int columna;
-	private int puntaje;
 	
+	/*
+	 * Atributo que indica el puntaje obtenido con el lanzamiento.
+	 */
+	private int puntaje;
+		
+	/*
+	 * Contructor con parámetros.
+	 */	
 	public Huevo(int fila, int columna, int puntaje) {
 		
 		this.fila = fila;

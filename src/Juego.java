@@ -7,7 +7,6 @@ import java.util.Scanner;
 import java.time.LocalDate;
 /**
  * @author JavFuentes
- *
  */
 
 public class Juego {
@@ -112,10 +111,23 @@ public class Juego {
 			do {
 				posicionado = false;
 				generarCoordenadasAleatorias();
-
-				if (tablero.getCasilla()[coordenadaX][coordenadaY] == tablero.getCALLE()
-						&& tablero.getCasilla()[coordenadaX][coordenadaY + 1] == tablero.getCALLE()
-						&& tablero.getCasilla()[coordenadaX][coordenadaY + 2] == tablero.getCALLE()) {
+				
+				/**
+				 * Se restringe a una kromi por columna.
+				 */
+				if (tablero.getCasilla()[coordenadaX][0] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][1] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][2] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][3] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][4] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][5] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][6] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][7] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][8] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][9] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][10] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][11] == tablero.getCALLE()
+						&& tablero.getCasilla()[coordenadaX][12] == tablero.getCALLE()) {
 
 					// kromi.setUbicacionFila(coordenadaX);
 					// kromi.setUbicacionColumna(coordenadaY);
@@ -141,9 +153,26 @@ public class Juego {
 			do {
 				posicionado = false;
 				generarCoordenadasAleatorias();
-
+				
+				/**
+				 * Se restringe a un caguano por columna.
+				 */
 				if (tablero.getCasilla()[coordenadaX][coordenadaY] == tablero.getCALLE()
-						&& tablero.getCasilla()[coordenadaX + 1][coordenadaY] == tablero.getCALLE()) {
+						&& tablero.getCasilla()[coordenadaX + 1][coordenadaY] == tablero.getCALLE()
+						&& tablero.getCasilla()[0][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[1][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[2][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[3][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[4][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[5][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[6][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[7][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[8][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[9][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[10][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[11][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[12][coordenadaY] != tablero.getCAGUANO()
+						&& tablero.getCasilla()[13][coordenadaY] != tablero.getCAGUANO()) {
 
 					// caguano.setUbicacionFila(coordenadaX);
 					// caguano.setUbicacionColumna(coordenadaY);
@@ -186,25 +215,57 @@ public class Juego {
 	 * Procedimiento que lanza un huevo en las coordenadas que el usuario elige.
 	 */
 	public static void nuevoLanzamiento() {
-
+		
+		/**
+		 * Variables que representan los atributos de la clase Huevo
+		 */
 		int fila = 0;
 		int columna = 0;
 		int puntaje = 0;
-
 		
-		System.out.println("Seleccione fila y columna donde lanzará el huevo. ");
-		System.out.println("Si desea terminar la partida escriba cero. ");
+		/**
+		 * Se pide al jugador que ingrese las coordenadas donde se lanzará el huevo.
+		 */
+		System.out.println("Seleccione fila y columna donde lanzar el huevo. ");
+		System.out.println("Si desea terminar la partida digite 16. ");
 		System.out.println("Fila: ");
-		fila = Integer.valueOf(sc.nextLine()) - 1;
-		System.out.println("Columna: ");
-		columna = Integer.valueOf(sc.nextLine()) - 1;
 		
-		if(fila < 0 || columna < 0) {
+		/**
+		 * Se valida que se ingresen solo números para la variable fila
+		 */
+		fila = Integer.valueOf(sc.nextLine()) - 1;
+		while(!String.valueOf(fila).matches("[0-9]{1,2}")) {
+			System.out.println("[Error]");
+			System.out.println("Fila: ");
+			fila = Integer.valueOf(sc.nextLine()) - 1;
+		}
+		
+		System.out.println("Columna: ");
+		/**
+		 * Se valida que se ingresen solo números para la variable columna
+		 */
+		columna = Integer.valueOf(sc.nextLine()) - 1;
+		while(!String.valueOf(columna).matches("[0-9]{1,2}")) {
+			System.out.println("[Error]");
+			System.out.println("Columna: ");
+			columna = Integer.valueOf(sc.nextLine()) - 1;
+		}
+		
+		/**
+		 * Si se ingresa un número fuera de rango la partida finalizará
+		 */
+		if(fila > 14 || columna > 14) {
+			System.out.println("[Partida Finalizada]");
 			System.out.println("[Puntaje Total: " + tablero.mostrarPuntaje() + "]");
-			System.out.println("[Total huevos lanzados: " + tablero.contarLanzamientos()+ " ]");
+			System.out.println("[Total huevos lanzados: " + tablero.contarLanzamientos()+ "]");
 			System.out.println();
 			menuPrincipal();
 		}
+		
+		/**
+		 * Se accede a la ubicación dada por las coordenadas y se determina si se acertó
+		 * el lanzamiento , además se suma el puntaje si corresponde.
+		 */
 		switch (tablero.getCasilla()[fila][columna]) {
 		case 'K':
 			System.out.println("[HAS ACERTADO]");
@@ -230,8 +291,7 @@ public class Juego {
 					System.out.println("[KROMI DERRIBADA]");
 					puntaje += 10;
 				}
-			}
-			// Hay un bug cuando existan 2 Kromis juntas en la misma columna
+			}			
 			break;
 			
 		case 'C':

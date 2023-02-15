@@ -1,7 +1,8 @@
 import java.time.LocalDate;
 /**
  * @author JavFuentes
- *
+ * @author UrzuaAlarcon
+ * @author DavidToroH 
  */
 
 public class Kromi extends Carro {

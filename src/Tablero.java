@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 /**
  * @author JavFuentes
+ * @author UrzuaAlarcon
+ * @author DavidToroH 
  */
 
 public class Tablero {

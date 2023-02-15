@@ -7,8 +7,9 @@ import java.util.Scanner;
 import java.time.LocalDate;
 /**
  * @author JavFuentes
+ * @author UrzuaAlarcon
+ * @author DavidToroH 
  */
-
 public class Juego {
 	
 	/**
@@ -46,6 +47,7 @@ public class Juego {
 		String opcion = "";
 
 		while (!opcion.matches("[1-2]{1}")) {
+			
 			System.out.println("--- FIRST LINE ---");
 			System.out.println("------------------");
 			System.out.println("1. Nueva Partida. ");
@@ -224,7 +226,7 @@ public class Juego {
 		int puntaje = 0;
 		
 		/**
-		 * Se pide al jugador que ingrese las coordenadas donde se lanzará el huevo.
+1		 * Se pide al jugador que ingrese las coordenadas donde se lanzará el huevo.
 		 */
 		System.out.println("Seleccione fila y columna donde lanzar el huevo. ");
 		System.out.println("Si desea terminar la partida digite 16. ");

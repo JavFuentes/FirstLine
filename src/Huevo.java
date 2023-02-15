@@ -1,6 +1,7 @@
 /**
  * @author JavFuentes
- *
+ * @author UrzuaAlarcon
+ * @author DavidToroH 
  */
 
 public class Huevo {
